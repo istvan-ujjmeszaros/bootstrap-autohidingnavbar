@@ -9,31 +9,31 @@ Bootstrap Auto-Hiding Navbar is an extension for Bootstrap's fixed navbar which 
 
 1. Download the latest tag from the [releases page](https://github.com/istvan-ujjmeszaros/bootstrap-autohidingnavbar/releases) or get it via **bower**:
 
-	```shell
-	$ bower install bootstrap-autohidingnavbar
-	```
+```shell
+$ bower install bootstrap-autohidingnavbar
+```
 
 2. Include **jQuery** and **Bootstrap**:
 
-	```html
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	```
+```html
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+```
 
 3. Include plugin's code:
 
-	```html
-	<script src="dist/jquery.bootstrap-autohidingnavbar.min.js"></script>
-	```
+```html
+<script src="dist/jquery.bootstrap-autohidingnavbar.min.js"></script>
+```
 
 4. Call the plugin:
 
-	```javascript
-	$(".navbar-fixed-top").autoHidingNavbar({
-		// see next for specifications
-	});
-	```
+```javascript
+$(".navbar-fixed-top").autoHidingNavbar({
+  // see next for specifications
+});
+```
 
 ## Specifications
 
@@ -53,9 +53,9 @@ You can modify the behavior and aspect of the plugin by calling its methods, mos
 
 To call methods on the auto hiding instance, use the following syntax:
 
-	```javascript
-	$(selector).autoHidingNavbar(methodName, parameter);
-	```
+```javascript
+$(selector).autoHidingNavbar(methodName, parameter);
+```
 
 Here are the available methods:
 
@@ -155,22 +155,22 @@ To build and test the plugin, you need:
 
 Then, `cd` to the project directory and install the required dependencies:
 
-	```shell
-	$ npm install
-	$ bower install
-	```
+```shell
+$ npm install
+$ bower install
+```
 
 To run jshint on the plugin code, call:
 
-	```shell
-	$ grunt jshint
-	```
+```shell
+$ grunt jshint
+```
 
 To build the output js and css files, with the related minified ones, run:
 
-	```shell
-	$ grunt
-	```
+```shell
+$ grunt
+```
 
 ## Issues and Contributions
 
