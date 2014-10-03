@@ -8,23 +8,23 @@
  */
 ;(function($, window, document, undefined) {
   var pluginName = 'autoHidingNavbar',
-      $window = $(window),
-      $document = $(document),
-      _scrollThrottleTimer = null,
-      _resizeThrottleTimer = null,
-      _throttleDelay = 70,
-      _lastScrollHandlerRun = 0,
-      _previousScrollTop = null,
-      _windowHeight = $window.height(),
-      _visible = true,
-      _hideOffset,
-      defaults = {
-        disableAutohide: false,
-        showOnUpscroll: true,
-        showOnBottom: true,
-        hideOffset: 'auto', // "auto" means the navbar height
-        animationDuration: 200
-      };
+    $window = $(window),
+    $document = $(document),
+    _scrollThrottleTimer = null,
+    _resizeThrottleTimer = null,
+    _throttleDelay = 70,
+    _lastScrollHandlerRun = 0,
+    _previousScrollTop = null,
+    _windowHeight = $window.height(),
+    _visible = true,
+    _hideOffset,
+    defaults = {
+      disableAutohide: false,
+      showOnUpscroll: true,
+      showOnBottom: true,
+      hideOffset: 'auto', // "auto" means the navbar height
+      animationDuration: 200
+    };
 
   function AutoHidingNavbar(element, options) {
     this.element = $(element);
@@ -39,9 +39,18 @@
       return;
     }
 
-    autoHidingNavbar.element.addClass('navbar-hidden').animate({
-      top: -autoHidingNavbar.element.height()
-    }, {
+    var align = {};
+    if (autoHidingNavbar.element.hasClass('navbar-fixed-top')) {
+      align = {
+        top: -autoHidingNavbar.element.height()
+      };
+    } else if (autoHidingNavbar.element.hasClass('navbar-fixed-bottom')) {
+      align = {
+        bottom: -autoHidingNavbar.element.height()
+      };
+    }
+
+    autoHidingNavbar.element.addClass('navbar-hidden').animate(align, {
       queue: false,
       duration: autoHidingNavbar.settings.animationDuration
     });
@@ -56,9 +65,18 @@
       return;
     }
 
-    autoHidingNavbar.element.removeClass('navbar-hidden').animate({
-      top: 0
-    }, {
+    var align = {};
+    if (autoHidingNavbar.element.hasClass('navbar-fixed-top')) {
+      align = {
+        top: 0
+      };
+    } else if (autoHidingNavbar.element.hasClass('navbar-fixed-bottom')) {
+      align = {
+        bottom: 0
+      };
+    }
+
+    autoHidingNavbar.element.removeClass('navbar-hidden').animate(align, {
       queue: false,
       duration: autoHidingNavbar.settings.animationDuration
     });
@@ -67,7 +85,7 @@
 
   function detectState(autoHidingNavbar) {
     var scrollTop = $window.scrollTop(),
-        scrollDelta = scrollTop - _previousScrollTop;
+      scrollDelta = scrollTop - _previousScrollTop;
 
     _previousScrollTop = scrollTop;
 
@@ -79,8 +97,7 @@
       if (autoHidingNavbar.settings.showOnUpscroll || scrollTop <= _hideOffset) {
         show(autoHidingNavbar);
       }
-    }
-    else if (scrollDelta > 0) {
+    } else if (scrollDelta > 0) {
       if (!_visible) {
         if (autoHidingNavbar.settings.showOnBottom && scrollTop + _windowHeight === $document.height()) {
           show(autoHidingNavbar);
@@ -109,8 +126,7 @@
     $document.on('scroll.' + pluginName, function() {
       if (new Date().getTime() - _lastScrollHandlerRun > _throttleDelay) {
         scrollHandler(autoHidingNavbar);
-      }
-      else {
+      } else {
         clearTimeout(_scrollThrottleTimer);
         _scrollThrottleTimer = setTimeout(function() {
           scrollHandler(autoHidingNavbar);
