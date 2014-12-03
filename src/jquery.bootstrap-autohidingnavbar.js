@@ -31,7 +31,7 @@
       return;
     }
 
-    autoHidingNavbar.element.addClass('navbar-hidden').animate({
+    autoHidingNavbar.element.addClass('navbar-hidden').stop().animate({
       top: -autoHidingNavbar.element.height()
     }, {
       queue: false,
@@ -48,7 +48,7 @@
       return;
     }
 
-    autoHidingNavbar.element.removeClass('navbar-hidden').animate({
+    autoHidingNavbar.element.removeClass('navbar-hidden').stop().animate({
       top: 0
     }, {
       queue: false,
