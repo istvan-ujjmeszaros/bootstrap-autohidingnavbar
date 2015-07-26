@@ -15,7 +15,8 @@
         showOnUpscroll: true,
         showOnBottom: true,
         hideOffset: 'auto', // "auto" means the navbar height
-        animationDuration: 200
+        animationDuration: 200,
+        makeTransparent: false
       };
 
   function AutoHidingNavbar(element, options) {
@@ -32,7 +33,8 @@
     }
 
     autoHidingNavbar.element.addClass('navbar-hidden').animate({
-      top: -autoHidingNavbar.element.height()
+      top: -autoHidingNavbar.element.height(),
+      opacity: _finalOpacity
     }, {
       queue: false,
       duration: autoHidingNavbar.settings.animationDuration
@@ -49,7 +51,8 @@
     }
 
     autoHidingNavbar.element.removeClass('navbar-hidden').animate({
-      top: 0
+      top: 0,
+      opacity: _initialOpacity
     }, {
       queue: false,
       duration: autoHidingNavbar.settings.animationDuration
@@ -135,8 +138,11 @@
       this.setShowOnBottom(this.settings.showOnBottom);
       this.setHideOffset(this.settings.hideOffset);
       this.setAnimationDuration(this.settings.animationDuration);
+      this.setMakeTransparent(this.settings.makeTransparent);
 
       _hideOffset = this.settings.hideOffset === 'auto' ? this.element.height() : this.settings.hideOffset;
+      _initialOpacity = this.element.css('opacity');
+      _finalOpacity = this.settings.makeTransparent === true ? 0 : _initialOpacity;
       bindEvents(this);
 
       return this.element;
@@ -159,6 +165,10 @@
     },
     setAnimationDuration: function(value) {
       this.settings.animationDuration = value;
+      return this.element;
+    },
+    setMakeTransparent: function(value) {
+      this.settings.makeTransparent = value;
       return this.element;
     },
     show: function() {
