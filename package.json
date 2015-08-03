@@ -13,7 +13,7 @@
     "url": "http://github.com/istvan-ujjmeszaros/bootstrap-autohidingnavbar.git"
   },
   "homepage": "http://www.virtuosoft.eu/code/bootstrap-autohidingnavbar/",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-cli": "~0.1.13",
