@@ -12,7 +12,7 @@
 	"main": "src/jquery.bootstrap-autohidingnavbar.js",
   "dependencies": {
     "jquery": ">=1.9.0",
-    "bootstrap": ">=3.0.0"
+    "bootstrap": "~3.0"
   },
 	"keywords": [
 		"jquery",
