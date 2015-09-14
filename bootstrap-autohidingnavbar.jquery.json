@@ -7,7 +7,7 @@
         "ui",
         "navigation"
     ],
-    "version": "1.0.2",
+    "version": "1.0.4",
     "author": {
         "name": "István Ujj-Mészáros",
         "url": "https://github.com/istvan-autohidingnavbar"
@@ -24,6 +24,6 @@
     "download": "https://github.com/istvan-ujjmeszaros/bootstrap-autohidingnavbar/archive/master.zip",
     "dependencies": {
         "jquery": ">=1.7",
-        "bootstrap": ">=3.0.0"
+        "bootstrap": "~3.0"
     }
 }
