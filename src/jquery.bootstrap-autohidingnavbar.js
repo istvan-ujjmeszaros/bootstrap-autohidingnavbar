@@ -15,7 +15,9 @@
         showOnUpscroll: true,
         showOnBottom: true,
         hideOffset: 'auto', // "auto" means the navbar height
-        animationDuration: 200
+        animationDuration: 200,
+        heightFunc: $.fn.height, // a function to calculate the height of the navbar.  another good option is $.fn.outerHeight
+        peek: 0 // how much the navbar should "peek" out while hidden.  provide a positive number of pixels.
       };
 
   function AutoHidingNavbar(element, options) {
@@ -32,7 +34,7 @@
     }
 
     autoHidingNavbar.element.addClass('navbar-hidden').animate({
-      top: -autoHidingNavbar.element.height()
+      top: -autoHidingNavbar.settings.heightFunc.call(autoHidingNavbar.element, autoHidingNavbar.element) + autoHidingNavbar.settings.peek
     }, {
       queue: false,
       duration: autoHidingNavbar.settings.animationDuration
@@ -136,7 +138,7 @@
       this.setHideOffset(this.settings.hideOffset);
       this.setAnimationDuration(this.settings.animationDuration);
 
-      _hideOffset = this.settings.hideOffset === 'auto' ? this.element.height() : this.settings.hideOffset;
+      _hideOffset = this.settings.hideOffset === 'auto' ? this.settings.heightFunc.call(this.element) : this.settings.hideOffset;
       bindEvents(this);
 
       return this.element;

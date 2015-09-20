@@ -46,6 +46,8 @@ When calling `$(".navbar-fixed-top").autoHidingNavbar()` you can pass a paramete
 - `showOnBottom`, defaults to `'true'`, the navbar shows up when scroll reaches the page's end.
 - `hideOffset`, defaults to `'auto'`, hides the navbar after scrolling that much pixel. Auto means the navbar's height.
 - `animationDuration`, defaults to `'200'`, is the duration of the show and hide animations in milliseconds.
+- `heightFunc`, defaults to `jQuery.fn.height`, is a reference to a function that calculates the height of the navbar.  `jQuery.fn.outerHeight` is a good choice if your navbar has padding or a border
+- `peek`, defaults to `0`, is a number of pixels of the navbar that should stay visible even when the navbar is hidden
 
 ### Methods
 
