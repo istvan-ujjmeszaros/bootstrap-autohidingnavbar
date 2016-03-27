@@ -32,7 +32,7 @@
     }
 
     autoHidingNavbar.element.addClass('navbar-hidden').animate({
-      top: -autoHidingNavbar.element.height()
+      top: -1 * parseInt(autoHidingNavbar.element.css('height'), 10)
     }, {
       queue: false,
       duration: autoHidingNavbar.settings.animationDuration
@@ -136,7 +136,7 @@
       this.setHideOffset(this.settings.hideOffset);
       this.setAnimationDuration(this.settings.animationDuration);
 
-      _hideOffset = this.settings.hideOffset === 'auto' ? this.element.height() : this.settings.hideOffset;
+      _hideOffset = this.settings.hideOffset === 'auto' ? parseInt(this.element.css('height'), 10) : this.settings.hideOffset;
       bindEvents(this);
 
       return this.element;

@@ -1,5 +1,5 @@
 /*
- *  Bootstrap Auto-Hiding Navbar - v1.0.4
+ *  Bootstrap Auto-Hiding Navbar - v1.0.5
  *  An extension for Bootstrap's fixed navbar which hides the navbar while the page is scrolling downwards and shows it the other way. The plugin is able to show/hide the navbar programmatically as well.
  *  http://www.virtuosoft.eu/code/bootstrap-autohidingnavbar/
  *
@@ -40,7 +40,7 @@
     }
 
     autoHidingNavbar.element.addClass('navbar-hidden').animate({
-      top: -autoHidingNavbar.element.height()
+      top: -1 * parseInt(autoHidingNavbar.element.css('height'), 10)
     }, {
       queue: false,
       duration: autoHidingNavbar.settings.animationDuration
@@ -144,7 +144,7 @@
       this.setHideOffset(this.settings.hideOffset);
       this.setAnimationDuration(this.settings.animationDuration);
 
-      _hideOffset = this.settings.hideOffset === 'auto' ? this.element.height() : this.settings.hideOffset;
+      _hideOffset = this.settings.hideOffset === 'auto' ? parseInt(this.element.css('height'), 10) : this.settings.hideOffset;
       bindEvents(this);
 
       return this.element;
