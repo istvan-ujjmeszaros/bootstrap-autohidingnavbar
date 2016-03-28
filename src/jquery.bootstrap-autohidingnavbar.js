@@ -9,13 +9,15 @@
       _previousScrollTop = null,
       _windowHeight = $window.height(),
       _visible = true,
+      _timeoutID = null,
       _hideOffset,
       defaults = {
         disableAutohide: false,
         showOnUpscroll: true,
         showOnBottom: true,
         hideOffset: 'auto', // "auto" means the navbar height
-        animationDuration: 200
+        animationDuration: 200,
+        hideAfter: 0 //0 means delayed hide not active
       };
 
   function AutoHidingNavbar(element, options) {
@@ -54,6 +56,12 @@
       queue: false,
       duration: autoHidingNavbar.settings.animationDuration
     });
+    if(autoHidingNavbar.settings.hideAfter > 0) {
+      if(_timeoutID != null){
+        window.clearTimeout(_timeoutID);
+      }
+      _timeoutID = window.setTimeout(hide, autoHidingNavbar.settings.hideAfter, autoHidingNavbar);
+    }
     _visible = true;
   }
 
