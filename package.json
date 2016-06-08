@@ -6,7 +6,8 @@
     "name": "István Ujj-Mészáros",
     "url": "https://github.com/istvan-ujjmeszaros"
   },
-  "contributors": [],
+  "contributors": [
+  ],
   "repository": {
     "type": "git",
     "url": "http://github.com/istvan-ujjmeszaros/bootstrap-autohidingnavbar.git"
@@ -14,20 +15,18 @@
   "homepage": "http://www.virtuosoft.eu/code/bootstrap-autohidingnavbar/",
   "version": "1.0.5",
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "grunt": "~0.4.1",
     "grunt-cli": "~0.1.13",
-    "grunt-contrib-concat": "^1.0.0",
-    "grunt-contrib-cssmin": "~0.9.0",
-    "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-uglify": "^1.0.1"
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-contrib-cssmin": "~0.9.0"
   },
   "scripts": {
     "test": "grunt travis --verbose"
   },
-  "licenses": [
-    {
-      "type": "Apache-2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0"
-    }
-  ]
+  "licenses": [{
+    "type": "Apache-2.0",
+    "url": "http://www.apache.org/licenses/LICENSE-2.0"
+  }]
 }
