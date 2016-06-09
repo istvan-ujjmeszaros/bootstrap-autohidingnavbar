@@ -43,7 +43,7 @@
 
     _visible = false;
 
-	autoHidingNavbar.element.trigger('hide.autoHidingNavbar');
+    autoHidingNavbar.element.trigger('hide.autoHidingNavbar');
   }
 
   function show(autoHidingNavbar) {
@@ -59,7 +59,7 @@
     });
     _visible = true;
 
-	autoHidingNavbar.element.trigger('show.autoHidingNavbar');
+    autoHidingNavbar.element.trigger('show.autoHidingNavbar');
   }
 
   function detectState(autoHidingNavbar) {

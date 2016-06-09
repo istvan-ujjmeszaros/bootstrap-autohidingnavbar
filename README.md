@@ -58,6 +58,26 @@ To call methods on the auto hiding instance, use the following syntax:
 $(selector).autoHidingNavbar(methodName, parameter);
 ```
 
+### Events
+
+You can listen for following events.
+
+- `show.autoHidingNavbar` triggers when element is shown.
+- `hide.autoHidingNavbar` triggers when element is hidden.
+
+```javascript
+var element = $(selector);
+
+element.on("show.autoHidingNavbar", function() {
+  // on show
+});
+
+element.on("hide.autoHidingNavbar", function() {
+  // on hide
+});
+
+```
+
 Here are the available methods:
 
 - `setDisableAutohide(value)` to change the `disableAutohide` parameter.
