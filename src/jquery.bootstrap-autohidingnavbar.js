@@ -42,6 +42,8 @@
     $('.dropdown.open .dropdown-toggle', autoHidingNavbar.element).dropdown('toggle');
 
     _visible = false;
+
+	autoHidingNavbar.element.trigger('hide.autoHidingNavbar');
   }
 
   function show(autoHidingNavbar) {
@@ -56,6 +58,8 @@
       duration: autoHidingNavbar.settings.animationDuration
     });
     _visible = true;
+
+	autoHidingNavbar.element.trigger('show.autoHidingNavbar');
   }
 
   function detectState(autoHidingNavbar) {
