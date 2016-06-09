@@ -48,16 +48,6 @@ When calling `$(".navbar-fixed-top").autoHidingNavbar()` you can pass a paramete
 - `animationDuration`, defaults to `'200'`, is the duration of the show and hide animations in milliseconds.
 - `navbarOffset`, defaults to `'0'`, the navbar doesn't hide that many pixels from the bottom. 
 
-### Methods
-
-You can modify the behavior and aspect of the plugin by calling its methods, most of them accepts a `value`.
-
-To call methods on the auto hiding instance, use the following syntax:
-
-```javascript
-$(selector).autoHidingNavbar(methodName, parameter);
-```
-
 ### Events
 
 You can listen for following events.
@@ -76,6 +66,16 @@ element.on("hide.autoHidingNavbar", function() {
   // on hide
 });
 
+```
+
+### Methods
+
+You can modify the behavior and aspect of the plugin by calling its methods, most of them accepts a `value`.
+
+To call methods on the auto hiding instance, use the following syntax:
+
+```javascript
+$(selector).autoHidingNavbar(methodName, parameter);
 ```
 
 Here are the available methods:
