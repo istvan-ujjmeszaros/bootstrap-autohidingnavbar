@@ -1,7 +1,7 @@
 # Bootstrap Auto-Hiding Navbar [![Build Status](https://secure.travis-ci.org/istvan-ujjmeszaros/bootstrap-autohidingnavbar.png?branch=master)](https://travis-ci.org/istvan-ujjmeszaros/bootstrap-autohidingnavbar)
 Bootstrap Auto-Hiding Navbar is an extension for Bootstrap's fixed navbar which hides the navbar while the page is scrolling downwards and shows it the other way. The plugin is able to show/hide the navbar programmatically as well.
 
-##Demo
+## Demo
 
 [http://www.virtuosoft.eu/code/bootstrap-autohidingnavbar/](http://www.virtuosoft.eu/code/bootstrap-autohidingnavbar/)
 
