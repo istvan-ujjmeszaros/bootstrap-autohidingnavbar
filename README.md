@@ -42,11 +42,16 @@ Bootstrap Auto-Hiding Navbar is an extension for Bootstrap's fixed navbar which 
 When calling `$(".navbar-fixed-top").autoHidingNavbar()` you can pass a parameters object with zero or more of the following:
 
 - `disableAutohide`, defaults to `false`, set this to `true` if you want to show/hide the navbar programmatically.
+- `staticMenu`, defaults to `false`, set this to `true` if you want includes support for static menus.
 - `showOnUpscroll`, defaults to `'true'`, the navbar shows up when scrolling the page upwards (otherwise it shows only when scroll is on page's top).
 - `showOnBottom`, defaults to `'true'`, the navbar shows up when scroll reaches the page's end.
 - `hideOffset`, defaults to `'auto'`, hides the navbar after scrolling that much pixel. Auto means the navbar's height.
+- `staticMenuOffset`, defaults to `'auto'`, fixes the navbar after scrolling that much pixel. Auto means an indent from the beginning of the page to navbar's.
 - `animationDuration`, defaults to `'200'`, is the duration of the show and hide animations in milliseconds.
 - `navbarOffset`, defaults to `'0'`, the navbar doesn't hide that many pixels from the bottom. 
+- `classHidden`, defaults to `'navbar-hidden'`, custom class to be set when hiding the navbar.
+- `classStatic`, defaults to `'navbar-static-top'`, custom class to be set when static the navbar.
+- `classFixed`, defaults to `'navbar-fixed-top'`, custom class to be set when fixed the navbar. 
 
 ### Events
 
@@ -54,6 +59,8 @@ You can listen for following events.
 
 - `show.autoHidingNavbar` triggers when element is shown.
 - `hide.autoHidingNavbar` triggers when element is hidden.
+- `fixed.autoHidingNavbar` triggers when element is fixed.
+- `static.autoHidingNavbar` triggers when element is static.
 
 ```javascript
 var element = $(selector);
@@ -64,6 +71,14 @@ element.on("show.autoHidingNavbar", function() {
 
 element.on("hide.autoHidingNavbar", function() {
   // on hide
+});
+
+element.on("fixed.autoHidingNavbar", function() {
+  // on fixed
+});
+
+element.on("static.autoHidingNavbar", function() {
+  // on static
 });
 
 ```
@@ -81,12 +96,19 @@ $(selector).autoHidingNavbar(methodName, parameter);
 Here are the available methods:
 
 - `setDisableAutohide(value)` to change the `disableAutohide` parameter.
+- `setStaticMenu(value)` to change the `staticMenu` parameter.
 - `setShowOnUpscroll(value)` to change the `showOnUpscroll` parameter.
 - `setShowOnBottom(value)` to change the `showOnBottom` parameter.
 - `setHideOffset(value)` to change the `hideOffset` parameter.
+- `setStaticMenuOffset(value)` to change the `staticMenuOffset` parameter.
 - `setAnimationDuration(value)` to change the `animationDuration` parameter.
+- `setClassHidden(value)` to change the `classHidden` parameter.
+- `setClassStatic(value)` to change the `classStatic` parameter.
+- `setClassFixed(value)` to change the `classFixed` parameter.
 - `show()` to show the navbar programmatically.
 - `hide()` to hide the navbar programmatically.
+- `static()` to static the navbar programmatically.
+- `fixed()` to fixed the navbar programmatically.
 - `destroy()` destroys the plugin instance.
 
 
