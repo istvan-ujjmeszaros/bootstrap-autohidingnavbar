@@ -22,6 +22,7 @@
         disableAutohide: false,
         showOnUpscroll: true,
         showOnBottom: true,
+        showOnTop: true,
         hideOffset: 'auto', // "auto" means the navbar height
         animationDuration: 200,
         navbarOffset: 0
@@ -77,27 +78,31 @@
     _previousScrollTop = scrollTop;
 
     if (scrollDelta < 0) {
-      if (_visible) {
+      if (_visible && autoHidingNavbar.settings.showOnTop) {
         return;
       }
 
+      if (!autoHidingNavbar.settings.showOnTop && scrollTop <= _hideOffset) {
+        return hide(autoHidingNavbar);
+      }
+
       if (autoHidingNavbar.settings.showOnUpscroll || scrollTop <= _hideOffset) {
-        show(autoHidingNavbar);
+        return show(autoHidingNavbar);
       }
     }
+
     else if (scrollDelta > 0) {
       if (!_visible) {
         if (autoHidingNavbar.settings.showOnBottom && scrollTop + _windowHeight === $document.height()) {
-          show(autoHidingNavbar);
+          return show(autoHidingNavbar);
         }
         return;
       }
 
-      if (scrollTop >= _hideOffset) {
-        hide(autoHidingNavbar);
+      if (scrollTop >= _hideOffset || (scrollTop === 0 && !autoHidingNavbar.settings.showOnTop)) {
+        return hide(autoHidingNavbar);
       }
     }
-
   }
 
   function scrollHandler(autoHidingNavbar) {
@@ -146,6 +151,7 @@
       this.setDisableAutohide(this.settings.disableAutohide);
       this.setShowOnUpscroll(this.settings.showOnUpscroll);
       this.setShowOnBottom(this.settings.showOnBottom);
+      this.setShowOnTop(this.settings.showOnTop);
       this.setHideOffset(this.settings.hideOffset);
       this.setAnimationDuration(this.settings.animationDuration);
 
@@ -164,6 +170,10 @@
     },
     setShowOnBottom: function(value) {
       this.settings.showOnBottom = value;
+      return this.element;
+    },
+    setShowOnTop: function(value) {
+      this.settings.showOnTop = value;
       return this.element;
     },
     setHideOffset: function(value) {
