@@ -8,13 +8,13 @@ Bootstrap Auto-Hiding Navbar is an extension for Bootstrap's fixed navbar which 
 ## Usage
 
 1. Download the latest tag from the [releases page](https://github.com/istvan-ujjmeszaros/bootstrap-autohidingnavbar/releases) or get it via **bower**:
-  
+
   ```shell
   $ bower install bootstrap-autohidingnavbar
   ```
 
 2. Include **jQuery** and **Bootstrap**:
-  
+
   ```html
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -22,13 +22,13 @@ Bootstrap Auto-Hiding Navbar is an extension for Bootstrap's fixed navbar which 
   ```
 
 3. Include plugin's code:
-  
+
   ```html
   <script src="dist/jquery.bootstrap-autohidingnavbar.min.js"></script>
   ```
 
 4. Call the plugin:
-  
+
   ```javascript
   $(".navbar-fixed-top").autoHidingNavbar({
     // see next for specifications
@@ -44,9 +44,10 @@ When calling `$(".navbar-fixed-top").autoHidingNavbar()` you can pass a paramete
 - `disableAutohide`, defaults to `false`, set this to `true` if you want to show/hide the navbar programmatically.
 - `showOnUpscroll`, defaults to `'true'`, the navbar shows up when scrolling the page upwards (otherwise it shows only when scroll is on page's top).
 - `showOnBottom`, defaults to `'true'`, the navbar shows up when scroll reaches the page's end.
+- `showOnTop`, defaults to `'true'`, the navbar shows up when scroll reaches the page's start.
 - `hideOffset`, defaults to `'auto'`, hides the navbar after scrolling that much pixel. Auto means the navbar's height.
 - `animationDuration`, defaults to `'200'`, is the duration of the show and hide animations in milliseconds.
-- `navbarOffset`, defaults to `'0'`, the navbar doesn't hide that many pixels from the bottom. 
+- `navbarOffset`, defaults to `'0'`, the navbar doesn't hide that many pixels from the bottom.
 
 ### Events
 
@@ -83,6 +84,7 @@ Here are the available methods:
 - `setDisableAutohide(value)` to change the `disableAutohide` parameter.
 - `setShowOnUpscroll(value)` to change the `showOnUpscroll` parameter.
 - `setShowOnBottom(value)` to change the `showOnBottom` parameter.
+- `setShowOnTop(value)` to change the `showOnTop` parameter.
 - `setHideOffset(value)` to change the `hideOffset` parameter.
 - `setAnimationDuration(value)` to change the `animationDuration` parameter.
 - `show()` to show the navbar programmatically.
