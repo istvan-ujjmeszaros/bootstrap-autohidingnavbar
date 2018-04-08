@@ -1,88 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Auto-hiding fixed navbar for Bootstrap</title>
+  <title>Auto-hiding fixed navbar for Bootstrap</title>
 
-    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-      .demo-long {
-        margin-top: 100px;
-        margin-bottom: 200px;
-      }
-    </style>
-  </head>
+  <style>
+    .demo-long {
+      margin-top: 100px;
+      margin-bottom: 200px;
+    }
+  </style>
+</head>
 
-  <body>
+<body>
 
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Auto hiding navbar</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Default</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+  <div class="container">
+    <a href="#" class="navbar-brand">Auto hiding navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">Dropdown <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="download">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+            <a class="dropdown-item" href="#">One more separated link</a>
+          </div>
+        </li>
+      </ul>
 
-    <div class="container">
-
-      <p class="demo-long">
-        Long content...
-      </p>
-      <p class="demo-long">
-        Long content...
-      </p>
-      <p class="demo-long">
-        Long content...
-      </p>
-      <p class="demo-long">
-        Long content...
-      </p>
-      <p class="demo-long">
-        Long content...
-      </p>
-      <p class="demo-long">
-        Long content...
-      </p>
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Default</a>
+        </li>
+      </ul>
 
     </div>
+  </div>
+</div>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<div class="container">
 
-    <script src="../src/jquery.bootstrap-autohidingnavbar.js"></script>
+  <p class="demo-long">
+    Long content... </p>
+  <p class="demo-long">
+    Long content... </p>
+  <p class="demo-long">
+    Long content... </p>
+  <p class="demo-long">
+    Long content... </p>
+  <p class="demo-long">
+    Long content... </p>
+  <p class="demo-long">
+    Long content... </p>
 
-    <script>
-      $("div.navbar-fixed-top").autoHidingNavbar();
-    </script>
+</div>
+
+<!--script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+
+<script src="../src/jquery.bootstrap-autohidingnavbar.js"></script>
+
+<script>
+  $("div.navbar.fixed-top").autoHidingNavbar();
+</script>
