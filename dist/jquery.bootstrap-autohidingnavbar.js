@@ -47,7 +47,10 @@
       duration: autoHidingNavbar.settings.animationDuration
     });
 
-    $('.dropdown.open .dropdown-toggle, .dropdown.show .dropdown-toggle', autoHidingNavbar.element).dropdown('toggle');
+    try {
+      $('.dropdown.open .dropdown-toggle, .dropdown.show .dropdown-toggle', autoHidingNavbar.element).dropdown('toggle');
+    }
+    catch(e) {}
 
     _visible = false;
 
