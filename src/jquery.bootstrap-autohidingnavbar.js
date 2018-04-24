@@ -28,7 +28,7 @@
   }
 
   function hide(autoHidingNavbar) {
-    if (!_visible) {
+    if (!_visible || autoHidingNavbar.element.find('.navbar-collapse').hasClass('in')) {
       return;
     }
 
